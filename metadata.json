@@ -1,0 +1,6 @@
+{
+  "name": "MONEXA MONITOR",
+  "description": "Production-quality, consent-based Android device monitoring platform with secure pairing, device metrics, location sharing, app usage, live screen viewer, and web admin dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

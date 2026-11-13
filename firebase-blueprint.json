@@ -1,0 +1,113 @@
+{
+  "entities": {
+    "User": {
+      "collection": "users",
+      "fields": {
+        "id": { "type": "string", "description": "User UID from Firebase Auth" },
+        "name": { "type": "string", "description": "Customer display name" },
+        "age": { "type": "number", "description": "Customer age" },
+        "preferredLanguage": { "type": "string", "description": "Language code: en or bn" },
+        "createdAt": { "type": "timestamp" },
+        "updatedAt": { "type": "timestamp" }
+      }
+    },
+    "Device": {
+      "collection": "devices",
+      "fields": {
+        "id": { "type": "string", "description": "6-digit unique numeric device ID or document ID" },
+        "deviceId": { "type": "string", "description": "6-digit numeric device identifier (e.g. 827491)" },
+        "userId": { "type": "string", "description": "Associated owner Firebase Auth UID" },
+        "customerName": { "type": "string" },
+        "customerAge": { "type": "number" },
+        "pairingStatus": { "type": "string", "description": "UNPAIRED, PENDING_APPROVAL, PAIRED, or REVOKED" },
+        "approvedAdminId": { "type": "string", "description": "Admin UID approved for telemetry access" },
+        "model": { "type": "string" },
+        "manufacturer": { "type": "string" },
+        "androidVersion": { "type": "string" },
+        "appVersion": { "type": "string" },
+        "batteryPercentage": { "type": "number" },
+        "isCharging": { "type": "boolean" },
+        "availableStorageBytes": { "type": "number" },
+        "totalStorageBytes": { "type": "number" },
+        "networkType": { "type": "string" },
+        "isOnline": { "type": "boolean" },
+        "locationSharingEnabled": { "type": "boolean" },
+        "screenSharingEnabled": { "type": "boolean" },
+        "usageAccessGranted": { "type": "boolean" },
+        "lastSyncTime": { "type": "timestamp" },
+        "createdAt": { "type": "timestamp" },
+        "updatedAt": { "type": "timestamp" }
+      }
+    },
+    "DevicePairing": {
+      "collection": "device_pairings",
+      "fields": {
+        "id": { "type": "string" },
+        "deviceId": { "type": "string" },
+        "adminId": { "type": "string" },
+        "userId": { "type": "string" },
+        "status": { "type": "string", "description": "PENDING, APPROVED, REJECTED, REVOKED" },
+        "requestedAt": { "type": "timestamp" },
+        "respondedAt": { "type": "timestamp" }
+      }
+    },
+    "LocationRecord": {
+      "collection": "location_records",
+      "fields": {
+        "id": { "type": "string" },
+        "deviceId": { "type": "string" },
+        "userId": { "type": "string" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "accuracy": { "type": "number" },
+        "timestamp": { "type": "timestamp" }
+      }
+    },
+    "AppUsageRecord": {
+      "collection": "app_usage_records",
+      "fields": {
+        "id": { "type": "string" },
+        "deviceId": { "type": "string" },
+        "userId": { "type": "string" },
+        "packageName": { "type": "string" },
+        "appName": { "type": "string" },
+        "usageTimeMinutes": { "type": "number" },
+        "lastTimeUsed": { "type": "timestamp" }
+      }
+    },
+    "ScreenSession": {
+      "collection": "screen_sessions",
+      "fields": {
+        "id": { "type": "string" },
+        "deviceId": { "type": "string" },
+        "userId": { "type": "string" },
+        "status": { "type": "string", "description": "ACTIVE, PAUSED, ENDED" },
+        "startedAt": { "type": "timestamp" },
+        "endedAt": { "type": "timestamp" }
+      }
+    },
+    "AuditLog": {
+      "collection": "audit_logs",
+      "fields": {
+        "id": { "type": "string" },
+        "action": { "type": "string" },
+        "actorId": { "type": "string" },
+        "targetDeviceId": { "type": "string" },
+        "details": { "type": "string" },
+        "timestamp": { "type": "timestamp" }
+      }
+    },
+    "AppVersion": {
+      "collection": "app_versions",
+      "fields": {
+        "id": { "type": "string" },
+        "versionCode": { "type": "number" },
+        "versionName": { "type": "string" },
+        "releaseNotes": { "type": "string" },
+        "isRequired": { "type": "boolean" },
+        "downloadUrl": { "type": "string" },
+        "releasedAt": { "type": "timestamp" }
+      }
+    }
+  }
+}
